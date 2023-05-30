@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def spilt_curve(binary_img,num_points=0,resolution=3):
+def exstract_points(binary_img,size,start_point,num_points=0,resolution=0.5):
     closed_curve=has_closed_curve(binary_img)
   
     if closed_curve:
@@ -16,8 +16,16 @@ def spilt_curve(binary_img,num_points=0,resolution=3):
         new_X[i]=X_arr[idx]
         new_Y[i]=Y_arr[idx]
         idx=(idx+1)%len(X_arr)
-    return new_X , new_Y ,closed_curve
-#%%
+    new_X=new_X-new_X[0]
+    new_Y=new_Y[0]-new_Y
+    maxi = np.max(new_X) if np.max(new_X) > np.max(new_Y)-np.min(new_Y) else np.max(new_Y)-np.min(new_Y)
+    points = []
+    for i in range(len(new_X)):
+        x = size*(new_X[i]/maxi)+start_point[0]
+        y = size*(new_Y[i]/maxi)+start_point[1]  
+        points.append([x,y])
+    return points
+
 
 def has_closed_curve(binary_img):
     
@@ -30,8 +38,7 @@ def has_closed_curve(binary_img):
     
     return False
 
-#%%
-def split_open_curve(binary_image, num_points=0,resolution=3):
+def split_open_curve(binary_image, num_points=0,resolution=0.5):
     num_point=num_points
     curve = np.where(binary_image == 1)
     start_y = int(curve[0][0])
@@ -43,7 +50,7 @@ def split_open_curve(binary_image, num_points=0,resolution=3):
 
     max_distance = np.max(spread_img(binary_image, end_x, end_y))
     if ((num_point==0) or (num_point==1)):
-        num_point = int((max_distance-2)/resolution)
+        num_point = int((max_distance-2)*resolution)
     distances = np.linspace(2, max_distance, num_point)
     distances = np.round(distances).astype(int)
 
@@ -53,8 +60,8 @@ def split_open_curve(binary_image, num_points=0,resolution=3):
         y_coords[i], x_coords[i] = np.mean(np.where(spread_img(binary_image, end_x, end_y) == distance), axis=1)
 
     return  x_coords,y_coords
-#%%
-def split_close_curve(binary_image, num_points=0,resolution=3):
+
+def split_close_curve(binary_image, num_points=0,resolution=0.5):
     
     curve = np.where(binary_image == 1)
     start_y = int(curve[0][0])
@@ -73,7 +80,6 @@ def split_close_curve(binary_image, num_points=0,resolution=3):
     X,Y=split_open_curve(binary_image, num_points+1,resolution=resolution)
     return X[1:], Y[1:]
 
-#%%
 def spread_img(binary_img1, thisX, thisY):
     binary_img = np.copy(binary_img1)
     spread_img = np.zeros_like(binary_img)
@@ -89,7 +95,8 @@ def spread_img(binary_img1, thisX, thisY):
                 binary_img[ny][nx] = 0
                 spread_img[ny][nx] = spread_img[y][x] + 1
     return spread_img
-#%%
+
+
 def img_to_binary_img(img):
     
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
