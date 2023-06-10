@@ -1,0 +1,9 @@
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-06-11 00:45:12.537897, end_time=2023-06-11 00:45:12.588187, duration=0.05029
+id=1, command=sn?, response=0TQDG2KEDB8M42, start_time=2023-06-11 00:45:17.568636, end_time=2023-06-11 00:45:17.591204, duration=0.022568
+id=2, command=battery?, response=41
+, start_time=2023-06-11 00:45:19.095891, end_time=2023-06-11 00:45:19.120948, duration=0.025057
+id=3, command=takeoff, response=ok, start_time=2023-06-11 00:45:20.618879, end_time=2023-06-11 00:45:26.974140, duration=6.355261
+id=4, command=delay 3, response=unknown command: delay, start_time=2023-06-11 00:45:26.974649, end_time=2023-06-11 00:45:27.025375, duration=0.050726
+id=5, command=land, response=ok, start_time=2023-06-11 00:45:27.025847, end_time=2023-06-11 00:45:27.738920, duration=0.713073

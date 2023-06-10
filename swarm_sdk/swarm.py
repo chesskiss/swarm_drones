@@ -355,6 +355,7 @@ class Swarm(object):
         """
         id = int(command.partition('=')[0])
         sn = command.partition('=')[2]
+        print('sn =', sn)
         ip = self.sn2ip[sn]
 
         self.id2sn[id-1] = sn

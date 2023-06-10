@@ -1,0 +1,10 @@
+scan 1
+correct_ip
+0=0TQZGANED0021X
+battery_check 20
+battery?
+1>takeoff
+1>delay 3
+1>land
+
+//sync 1
