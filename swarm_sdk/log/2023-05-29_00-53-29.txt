@@ -1,8 +1,0 @@
-------
-Drone: 1
-id=0, command=command, response=ok, start_time=2023-05-29 00:53:15.745698, end_time=2023-05-29 00:53:15.794254, duration=0.048556
-id=1, command=battery?, response=51
-, start_time=2023-05-29 00:53:20.824429, end_time=2023-05-29 00:53:20.866410, duration=0.041981
-id=2, command=sn?, response=0TQDG2KEDB8M42, start_time=2023-05-29 00:53:22.383879, end_time=2023-05-29 00:53:22.431397, duration=0.047518
-id=3, command=takeoff, response=ok, start_time=2023-05-29 00:53:23.957031, end_time=2023-05-29 00:53:28.094503, duration=4.137472
-id=4, command=land, response=error, start_time=2023-05-29 00:53:28.094503, end_time=2023-05-29 00:53:28.141881, duration=0.047378

@@ -1,5 +1,0 @@
-------
-Drone: 1
-id=0, command=command, response=ok, start_time=2023-06-11 00:38:48.135025, end_time=2023-06-11 00:38:48.170773, duration=0.035748
-id=1, command=battery?, response=51
-, start_time=2023-06-11 00:38:53.172895, end_time=2023-06-11 00:38:53.224684, duration=0.051789

@@ -2,7 +2,7 @@ import socket
 import argparse
 import sys
 
-def get_socket():
+def get_socket(): #TODO Add timeout
     """
     Gets a socket.
     :return: Socket.
@@ -33,8 +33,6 @@ def set_ap(ssid, password, address):
     cmd = f'ap {ssid} {password}'
     print(f'sending cmd {cmd}')
     s.sendto(cmd.encode('utf-8'), address)
-
-    print('test checkpoint')
 
     response, ip = s.recvfrom(100)
     print(f'from {ip}: {response}')

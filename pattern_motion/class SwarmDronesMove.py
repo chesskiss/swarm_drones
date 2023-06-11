@@ -1,5 +1,5 @@
 import numpy as np
-from vpython import *
+#from vpython import *
 import cv2
 from exstract_point import *
 
@@ -83,7 +83,7 @@ num_drone=len(start_pos_drone)
 img = cv2.imread(f"curves-test/img0.png")
 binary_img=img_to_binary_img(img)
 
-resolution=0.05 
+resolution=0.05
 size=40
 start_point=[10,0]
 
