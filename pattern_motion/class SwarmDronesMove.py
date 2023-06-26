@@ -3,6 +3,8 @@ import numpy as np
 import cv2
 from exstract_point import *
 
+
+
 class Drone:
     def __init__(self, pos):
         self.point_pos = -1
@@ -14,6 +16,7 @@ class Drone:
 
         direction = (next_pos - self.pos)
         # fly_to_xyz(direction.x,direction.y,direction.z)
+        #TODO call swarm.py ...
         self.pos = next_pos
         self.sphere.pos = self.pos
 

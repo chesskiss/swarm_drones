@@ -30,12 +30,31 @@ def set_ap(ssid, password, address):
     response, ip = s.recvfrom(100)
     print(f'from {ip}: {response}')
 
-    cmd = f'ap {ssid} {password}'
+    #cmd = f'ap {ssid} {password}'
     print(f'sending cmd {cmd}')
     s.sendto(cmd.encode('utf-8'), address)
 
     response, ip = s.recvfrom(100)
     print(f'from {ip}: {response}')
+
+
+def set_cheskis_ap():
+    s = get_socket()
+
+    cmd = 'command'
+    print(f'sending cmd {cmd}')
+    s.sendto(cmd.encode('ascii'), ('192.168.10.1', 8889))
+
+    response, ip = s.recvfrom(100)
+    print(f'from {ip}: {response}')
+
+    cmd = f' {"cheskis-penthouse"} {"3.141592"}'
+    print(f'sending cmd {cmd}')
+    s.sendto(cmd.encode('latin-1'), ('192.168.10.1', 8889))
+
+    response, ip = s.recvfrom(100)
+    print(f'from {ip}: {response}')
+
 
 def parse_args(args):
     """
@@ -55,9 +74,10 @@ def parse_args(args):
     return parser.parse_args(args)
 
 if __name__ == '__main__':
-    args = parse_args(sys.argv[1:])
-    ssid = args.ssid
-    pwd = args.pwd
-    tello_address = (args.ip, args.port)
-    
-    set_ap(ssid, pwd, tello_address)
+    # args = parse_args(sys.argv[1:])
+    # ssid = args.ssid
+    # pwd = args.pwd
+    # tello_address = (args.ip, args.port)
+    #set_ap(ssid, pwd, tello_address)
+
+    set_cheskis_ap()

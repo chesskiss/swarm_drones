@@ -1,0 +1,13 @@
+// Ryzo version 1.0 drones
+scan 2
+battery_check 20
+correct_ip
+1=0TQZGANED0021X
+2=0TQZGANED0020C
+*>takeoff
+sync 1
+1>right 100
+delay 2
+sync 1
+2>right 100
+*>land
