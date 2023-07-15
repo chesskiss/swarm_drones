@@ -127,14 +127,13 @@ class Swarm(object):
     Tello Edu swarm.
     """
 
-    def __init__(self, fpath):
+    def __init__(self):
         """
         Ctor.
 
         :param fpath: Path to command text file.
         """
-        self.fpath = fpath
-        self.commands = self._get_commands(fpath)
+        self.commands = None
         self.manager = TelloManager()
         self.tellos = []
         self.pools = []
@@ -195,7 +194,7 @@ class Swarm(object):
                     self._handle_eq(command)
                 elif 'sync' in command:
                     self._handle_sync(command)
-            
+
             self._wait_for_all()
         except KeyboardInterrupt as ki:
             self._handle_keyboard_interrupt()
