@@ -3,7 +3,6 @@ from vpython import *
 import cv2
 from exstract_point import *
 import keyboard
-from djitellopy import Tello
 from ClassSwarmDrones import *
 
 def test1():
@@ -59,7 +58,9 @@ def test3():
 
     points=exstract_points(binary_img,size,start_point,num_points=num_points)
     swarm_drones = SwarmDronesMove(num_drone, start_pos_drone, points)
+    print('before start move')
     swarm_drones.start_move()
+    print('after start move')
     while True:
         swarm_drones.move()
 

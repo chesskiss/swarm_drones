@@ -1,7 +1,6 @@
 import sys
 import argparse
-from swarm import *
-from ClassSwarmDrones import *
+from swarm_sdk.swarm import *
 
 def parse_args(args):
     """
@@ -18,9 +17,8 @@ def parse_args(args):
     return parser.parse_args(args)
 
 if __name__ == '__main__':
-    #args = parse_args(sys.argv[1:])
-    #fpath = args.file
+    args = parse_args(sys.argv[1:])
+    fpath = args.file
 
-    swarm = Swarm()
-    swarm_motion = SwarmDronesMove(1,)
+    swarm = Swarm(fpath)
     swarm.start()

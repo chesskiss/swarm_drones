@@ -13,28 +13,32 @@ class Drone:
         self.sphere = sphere(pos=self.pos, radius=9, make_trail=True, retain=50 ,color=color.green)
         self.start=False
         self.id = id
+        print('checkpoint id = ', self.id)
+
 
     def takeoff(self):
         # takeoff the drone
-        self.drone.takeoff()
-        self.start=True
+        print('checkpoint takeoff')
+        swarm_sdk.commands = [str(self.id) + '>takeoff']
+        swarm_sdk.start()
 
     def move_to(self, next_pos):
     # Move the drone to the next position
-
         direction = (next_pos - self.pos)
-        command = [str(self.id) + '> go ' + \
+        
+        swarm_sdk.commands = [str(self.id) + '>go ' + \
                     str(direction.x) + ' ' + \
                     str(direction.y) + ' ' + \
-                    str(direction.z) + ' ' + 25]
+                    str(direction.z) + ' 25']
         
-        swarm_sdk.start(command)
+        swarm_sdk.start()
         self.pos = next_pos
         self.sphere.pos = self.pos
 
     def land(self):
         # land the drone
-        self.drone.land()
+        swarm_sdk.commands = [str(self.id) + '>land']
+        swarm_sdk.start()
         
 
 class SwarmDronesMove:
@@ -46,8 +50,8 @@ class SwarmDronesMove:
         self.drones = []
         self.start_mode=True
 
-        command = ['scan ' + str(num_drone)]
-        swarm_sdk.start(command)
+        swarm_sdk.commands = ['scan ' + str(num_drone)]
+        swarm_sdk.start()
 
         # Calculate start points for each drone based on the number of points
         start_points = np.linspace(len(points),0,self.num_drone+1)
@@ -58,9 +62,10 @@ class SwarmDronesMove:
         for point in points:
             Vp_point = sphere(pos=vector(point[0],point[1], 0), radius=7, color=color.red)
             self.points.append(Vp_point) 
-
+            
         for i in range(self.num_drone):
-            drone = Drone(self.start_pos_list[i], i)
+            print('first for = ', i)
+            drone = Drone(self.start_pos_list[i], i+1)
             drone.next_pos = self.points[0].pos
             self.drones.append(drone)
 
@@ -73,6 +78,7 @@ class SwarmDronesMove:
                 if keyboard.is_pressed('q'):
                     self.stop()
                     
+                print('in start move before takeoff = ', this_drone.start )
                 if (this_drone.start==False):
                     this_drone.takeoff()
                 
