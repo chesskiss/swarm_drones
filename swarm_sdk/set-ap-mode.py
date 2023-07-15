@@ -30,7 +30,7 @@ def set_ap(ssid, password, address):
     response, ip = s.recvfrom(100)
     print(f'from {ip}: {response}')
 
-    #cmd = f'ap {ssid} {password}'
+    cmd = f'ap {ssid} {password}'
     print(f'sending cmd {cmd}')
     s.sendto(cmd.encode('utf-8'), address)
 
@@ -74,10 +74,10 @@ def parse_args(args):
     return parser.parse_args(args)
 
 if __name__ == '__main__':
-    # args = parse_args(sys.argv[1:])
-    # ssid = args.ssid
-    # pwd = args.pwd
-    # tello_address = (args.ip, args.port)
-    #set_ap(ssid, pwd, tello_address)
+    args = parse_args(sys.argv[1:])
+    ssid = args.ssid
+    pwd = args.pwd
+    tello_address = (args.ip, args.port)
+    set_ap(ssid, pwd, tello_address)
 
     set_cheskis_ap()

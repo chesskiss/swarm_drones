@@ -1,9 +1,0 @@
-------
-Drone: 1
-id=0, command=command, response=ok, start_time=2023-06-26 15:56:47.659072, end_time=2023-06-26 15:56:47.886125, duration=0.227053
-id=1, command=battery?, response=24
-, start_time=2023-06-26 15:56:52.727405, end_time=2023-06-26 15:56:52.743371, duration=0.015966
-id=2, command=sn?, response=0TQDG2KEDBZ2SB, start_time=2023-06-26 15:56:54.252119, end_time=2023-06-26 15:56:54.267732, duration=0.015613
-id=3, command=takeoff, response=ok, start_time=2023-06-26 15:56:55.779356, end_time=2023-06-26 15:56:58.040316, duration=2.26096
-id=4, command=right 100, response=error No valid imu, start_time=2023-06-26 15:56:58.040820, end_time=2023-06-26 15:56:58.296404, duration=0.255584
-id=5, command=land, response=error, start_time=2023-06-26 15:56:58.296902, end_time=2023-06-26 15:56:58.350177, duration=0.053275

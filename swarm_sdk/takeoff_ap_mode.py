@@ -1,10 +1,8 @@
-
-
 import time
 import socket
 
 # Tello drone's IP address and port
-tello_ip = '192.168.001.016	'
+tello_ip = '192.168.10.1	'
 tello_port = 8889
 
 # Create a UDP socket
