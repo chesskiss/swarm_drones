@@ -53,7 +53,7 @@ def test3():
     size=180
     num_points=8
     start_point=[20,0]
-    img = cv2.imread(f"curves-test/img4.png")
+    img = cv2.imread(f"./curves_test/img1.png")
     binary_img=img_to_binary_img(img)
 
     points=exstract_points(binary_img,size,start_point,num_points=num_points)
