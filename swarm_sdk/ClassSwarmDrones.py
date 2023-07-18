@@ -3,17 +3,19 @@ from vpython import *
 from exstract_point import *
 import keyboard
 from swarm import *
+import time
 
 swarm_sdk = Swarm()
 
 class Drone:
-    def __init__(self, pos, id, sim=False):
+    def __init__(self, pos, id, v, sim=False):
         self.point_pos = -1
         self.pos = pos
         self.sphere = sphere(pos=self.pos, radius=9, make_trail=True, retain=50 ,color=color.green)
         self.start=False
         self.id = id
         self.sim = sim
+        self.v = v
 
         print('checkpoint id = ', self.id)
 
@@ -32,12 +34,14 @@ class Drone:
             swarm_sdk.commands = [str(self.id) + '>go ' + \
                         str(direction.x) + ' ' + \
                         str(direction.y) + ' ' + \
-                        str(direction.z) + ' 25']
+                        str(direction.z) + str(self.v)]
             
             swarm_sdk.start()
         self.pos = next_pos
         self.sphere.pos = self.pos
-
+        if self.sim:
+            time.sleep(0.5)
+    
     def land(self):
         if not self.sim:    
             # land the drone
@@ -46,13 +50,14 @@ class Drone:
         
 
 class SwarmDronesMove:
-    def __init__(self, num_drone, start_pos_list, points,num_sim_drone=0):
-        self.num_drone = num_drone
+    def __init__(self, num_drone, start_pos_list, points,num_sim_drone=0,v=20):
+        self.num_drone = num_drone+num_sim_drone
         self.num_point = len(points)
         self.start_pos_list = start_pos_list
         self.points = []
         self.drones = []
         self.start_mode=True
+        self.v = v
 
         swarm_sdk.commands = ['scan ' + str(num_drone)]
         swarm_sdk.start()
@@ -67,15 +72,15 @@ class SwarmDronesMove:
             Vp_point = sphere(pos=vector(point[0],point[1], 0), radius=7, color=color.red)
             self.points.append(Vp_point) 
             
-        for i in range(self.num_drone):
+        for i in range(num_drone):
             print('first for = ', i)
-            drone = Drone(self.start_pos_list[i], i+1)
+            drone = Drone(self.start_pos_list[i], i+1,self.v)
             drone.next_pos = self.points[0].pos
             self.drones.append(drone)
         
-        for i in range(num_sim_drone):
-            print('second for = ', i)
-            drone = Drone(self.start_pos_list[i], i+1, sim=True)
+        for j in range(num_drone,num_drone+num_sim_drone):
+            #print(' for = ', j+1)
+            drone = Drone(self.start_pos_list[num_drone+j], -1 ,self.v, sim=True)
             drone.next_pos = self.points[0].pos
             self.drones.append(drone)
 

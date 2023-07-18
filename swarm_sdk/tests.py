@@ -46,22 +46,32 @@ def test2():
         #rate() 
         swarm_drones.move()
 
+def check_point(points):
+    # chek if the distance between point and the next point is less than 20
+    for i in range(len(points)-1):
+        if (np.linalg.norm(np.array(points[i])-np.array(points[i+1]))<20):
+            return False
+    if (np.linalg.norm(np.array(points[0])-np.array(points[-1]))<20):
+        return False
+    return True
+
 def test3():
     start_pos_drone=[vector(0,0,0)]
-    num_drone=1
+    num_drone=0
+    num_sim_drone=1
     resolution=0.05 
     size=180
     num_points=8
     start_point=[20,0]
-    img = cv2.imread(f"./curves_test/img1.png")
+    img = cv2.imread(f"./swarm_sdk/curves_test/img1.png")
     binary_img=img_to_binary_img(img)
 
     points=exstract_points(binary_img,size,start_point,num_points=num_points)
-    swarm_drones = SwarmDronesMove(num_drone, start_pos_drone, points)
-    print('before start move')
-    swarm_drones.start_move()
-    print('after start move')
-    while True:
+    if (check_point(points)):
+        swarm_drones = SwarmDronesMove(num_drone, start_pos_drone, points,num_sim_drone=num_sim_drone)
+        print('before start move')
+        swarm_drones.start_move()
+        print('after start move')
         swarm_drones.move()
 
 if __name__ == '__main__':
