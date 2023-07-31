@@ -34,7 +34,7 @@ class Drone:
             swarm_sdk.commands = [str(self.id) + '>go ' + \
                         str(direction.x) + ' ' + \
                         str(direction.y) + ' ' + \
-                        str(direction.z) + str(self.v)]
+                        str(direction.z) +' ' + str(self.v)]
             
             swarm_sdk.start()
         self.pos = next_pos
@@ -74,7 +74,7 @@ class SwarmDronesMove:
             
         for i in range(num_drone):
             print('first for = ', i)
-            drone = Drone(self.start_pos_list[i], i+1,self.v)
+            drone = Drone(self.start_pos_list[i], i+1, self.v)
             drone.next_pos = self.points[0].pos
             self.drones.append(drone)
         

@@ -38,6 +38,7 @@ def set_ap(ssid, password, address):
     print(f'from {ip}: {response}')
 
 
+
 def set_cheskis_ap():
     s = get_socket()
 
@@ -54,7 +55,25 @@ def set_cheskis_ap():
 
     response, ip = s.recvfrom(100)
     print(f'from {ip}: {response}')
+ 
 
+def set_oz_ap():
+    s = get_socket()
+
+    cmd = 'command'
+    print(f'sending cmd {cmd}')
+    s.sendto(cmd.encode('utf-8'), ('192.168.10.1', 8889))
+
+    response, ip = s.recvfrom(100)
+    print(f'from {ip}: {response}')
+
+    cmd = f'ap {"Ozariel"} {"12345678"}'
+    print(f'sending cmd {cmd}')
+    s.sendto(cmd.encode('utf-8'), ('192.168.10.1', 8889))
+
+    response, ip = s.recvfrom(100)
+    print(f'from {ip}: {response}')
+ 
 
 def parse_args(args):
     """
@@ -82,4 +101,5 @@ if __name__ == '__main__':
     set_ap(ssid, pwd, tello_address)
     '''
     
-    set_cheskis_ap()
+    #set_cheskis_ap()
+    set_oz_ap()
