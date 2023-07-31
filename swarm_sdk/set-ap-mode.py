@@ -100,6 +100,6 @@ if __name__ == '__main__':
     tello_address = (args.ip, args.port)
     set_ap(ssid, pwd, tello_address)
     '''
-    
+      
     #set_cheskis_ap()
     set_oz_ap()

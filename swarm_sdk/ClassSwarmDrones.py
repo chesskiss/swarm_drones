@@ -35,7 +35,7 @@ class Drone:
                         str(direction.x) + ' ' + \
                         str(direction.y) + ' ' + \
                         str(direction.z) +' ' + str(self.v)]
-            
+             
             swarm_sdk.start()
         self.pos = next_pos
         self.sphere.pos = self.pos

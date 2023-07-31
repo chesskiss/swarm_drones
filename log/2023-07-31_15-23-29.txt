@@ -1,0 +1,21 @@
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-07-31 15:20:35.479492, end_time=2023-07-31 15:20:35.495414, duration=0.015922
+id=1, command=takeoff, response=ok, start_time=2023-07-31 15:23:03.240520, end_time=2023-07-31 15:23:09.589480, duration=6.34896
+id=2, command=go 20 0 020, response=out of range, start_time=2023-07-31 15:23:10.070327, end_time=2023-07-31 15:23:10.215074, duration=0.144747
+id=3, command=go 1 66 020, response=out of range, start_time=2023-07-31 15:23:11.205215, end_time=2023-07-31 15:23:11.253127, duration=0.047912
+id=4, command=go 68 0 020, response=out of range, start_time=2023-07-31 15:23:12.315311, end_time=2023-07-31 15:23:12.364356, duration=0.049045
+id=5, command=go 65 1 020, response=out of range, start_time=2023-07-31 15:23:13.380873, end_time=2023-07-31 15:23:13.388871, duration=0.007998
+id=6, command=go 43 -24 020, response=out of range, start_time=2023-07-31 15:23:14.472383, end_time=2023-07-31 15:23:14.512461, duration=0.040078
+id=7, command=go 0 -67 020, response=out of range, start_time=2023-07-31 15:23:15.618020, end_time=2023-07-31 15:23:15.642003, duration=0.023983
+id=8, command=go -67 0 020, response=out of range, start_time=2023-07-31 15:23:16.754863, end_time=2023-07-31 15:23:16.859388, duration=0.104525
+id=9, command=go -67 0 020, response=out of range, start_time=2023-07-31 15:23:17.882186, end_time=2023-07-31 15:23:17.994691, duration=0.112505
+id=10, command=go -44 24 020, response=out of range, start_time=2023-07-31 15:23:18.981153, end_time=2023-07-31 15:23:19.005435, duration=0.024282
+id=11, command=go 1 66 020, response=out of range, start_time=2023-07-31 15:23:20.128249, end_time=2023-07-31 15:23:20.240555, duration=0.112306
+id=12, command=go 68 0 020, response=out of range, start_time=2023-07-31 15:23:21.254906, end_time=2023-07-31 15:23:21.374842, duration=0.119936
+id=13, command=go 65 1 020, response=out of range, start_time=2023-07-31 15:23:22.427521, end_time=2023-07-31 15:23:22.491594, duration=0.064073
+id=14, command=go 43 -24 020, response=out of range, start_time=2023-07-31 15:23:23.543228, end_time=2023-07-31 15:23:23.615380, duration=0.072152
+id=15, command=go 0 -67 020, response=out of range, start_time=2023-07-31 15:23:24.697934, end_time=2023-07-31 15:23:24.714010, duration=0.016076
+id=16, command=go -67 0 020, response=out of range, start_time=2023-07-31 15:23:25.829424, end_time=2023-07-31 15:23:25.885145, duration=0.055721
+id=17, command=go -67 0 020, response=out of range, start_time=2023-07-31 15:23:26.926790, end_time=2023-07-31 15:23:26.998948, duration=0.072158
+id=18, command=go -44 24 020, response=out of range, start_time=2023-07-31 15:23:28.026808, end_time=2023-07-31 15:23:28.123069, duration=0.096261

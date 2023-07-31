@@ -57,8 +57,8 @@ def check_point(points):
 
 def test3():
     start_pos_drone=[vector(0,0,0)]
-    num_drone=0
-    num_sim_drone=1
+    num_drone=1
+    num_sim_drone=0
     resolution=0.05 
     size=180
     num_points=8
