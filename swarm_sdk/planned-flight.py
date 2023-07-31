@@ -1,6 +1,6 @@
 import sys
 import argparse
-from swarm_sdk.swarm import *
+from swarm_old import *
 
 def parse_args(args):
     """

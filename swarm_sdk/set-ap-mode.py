@@ -55,6 +55,22 @@ def set_cheskis_ap():
     response, ip = s.recvfrom(100)
     print(f'from {ip}: {response}')
 
+def set_prime_hotspot_ap():
+    s = get_socket()
+
+    cmd = 'command'
+    print(f'sending cmd {cmd}')
+    s.sendto(cmd.encode('utf-8'), ('192.168.10.1', 8889))
+
+    response, ip = s.recvfrom(100)
+    print(f'from {ip}: {response}')
+
+    cmd = f'ap {"Prime"} {"31415922"}'
+    print(f'sending cmd {cmd}')
+    s.sendto(cmd.encode('utf-8'), ('192.168.10.1', 8889))
+
+    response, ip = s.recvfrom(100)
+    print(f'from {ip}: {response}')
 
 def parse_args(args):
     """
@@ -82,4 +98,4 @@ if __name__ == '__main__':
     set_ap(ssid, pwd, tello_address)
     '''
     
-    set_cheskis_ap()
+    set_prime_hotspot_ap()

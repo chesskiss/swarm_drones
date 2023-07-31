@@ -13,12 +13,10 @@ class Drone:
         self.sphere = sphere(pos=self.pos, radius=9, make_trail=True, retain=50 ,color=color.green)
         self.start=False
         self.id = id
-        print('checkpoint id = ', self.id)
 
 
     def takeoff(self):
         # takeoff the drone
-        print('checkpoint takeoff')
         swarm_sdk.commands = [str(self.id) + '>takeoff']
         swarm_sdk.start()
 
@@ -78,7 +76,6 @@ class SwarmDronesMove:
                 if keyboard.is_pressed('q'):
                     self.stop()
                     
-                print('in start move before takeoff = ', this_drone.start )
                 if (this_drone.start==False):
                     this_drone.takeoff()
                 
