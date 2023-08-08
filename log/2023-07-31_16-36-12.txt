@@ -1,3 +1,0 @@
-------
-Drone: 1
-id=0, command=command, response=ok, start_time=2023-07-31 16:36:06.181293, end_time=2023-07-31 16:36:06.233424, duration=0.052131

@@ -1,8 +1,0 @@
-------
-Drone: 1
-id=0, command=command, response=None, start_time=2023-07-31 17:03:03.921387, end_time=None, duration=None
-id=1, command=command, response=None, start_time=2023-07-31 17:03:08.928588, end_time=None, duration=None
-id=2, command=command, response=None, start_time=2023-07-31 17:03:13.935658, end_time=None, duration=None
-id=3, command=command, response=ok, start_time=2023-07-31 17:03:18.947229, end_time=2023-07-31 17:03:19.048293, duration=0.101064
-id=4, command=streamon, response=ok, start_time=2023-07-31 17:04:53.712649, end_time=2023-07-31 17:04:53.759358, duration=0.046709
-id=5, command=go 20.0 0.0 0.0 20, response=error Motor stop, start_time=2023-07-31 17:04:54.910362, end_time=2023-07-31 17:04:55.082729, duration=0.172367
