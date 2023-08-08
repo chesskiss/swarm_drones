@@ -1,0 +1,4 @@
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-07-18 20:56:00.606201, end_time=2023-07-18 20:56:00.687625, duration=0.081424
+id=1, command=takeoff, response=None, start_time=2023-07-18 20:57:42.380530, end_time=None, duration=None
