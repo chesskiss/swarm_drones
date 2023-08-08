@@ -1,0 +1,4 @@
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-07-31 16:39:43.243464, end_time=2023-07-31 16:39:43.258068, duration=0.014604
+id=1, command=streamon, response=ok, start_time=2023-07-31 16:41:06.371040, end_time=2023-07-31 16:41:06.484375, duration=0.113335
