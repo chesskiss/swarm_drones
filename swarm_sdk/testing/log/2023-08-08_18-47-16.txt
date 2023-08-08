@@ -1,0 +1,7 @@
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 18:47:07.543558, end_time=2023-08-08 18:47:07.571395, duration=0.027837
+id=1, command=battery?, response=47
+, start_time=2023-08-08 18:47:12.665794, end_time=2023-08-08 18:47:12.776855, duration=0.111061
+id=2, command=sn?, response=0TQDG2KEDBP0KS, start_time=2023-08-08 18:47:14.281478, end_time=2023-08-08 18:47:14.435468, duration=0.15399
+id=3, command=streamon, response=ok, start_time=2023-08-08 18:47:15.850315, end_time=2023-08-08 18:47:15.894889, duration=0.044574

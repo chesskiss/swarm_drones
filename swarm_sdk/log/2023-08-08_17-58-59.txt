@@ -1,0 +1,169 @@
+Hurray! Here we start
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+id=10, command=go 33.762057877813504 10.289389067524116 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:01.157864, end_time=2023-08-08 18:00:01.298596, duration=0.140732
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+id=10, command=go 33.762057877813504 10.289389067524116 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:01.157864, end_time=2023-08-08 18:00:01.298596, duration=0.140732
+id=11, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:02.351623, end_time=2023-08-08 18:00:02.471661, duration=0.120038
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+id=10, command=go 33.762057877813504 10.289389067524116 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:01.157864, end_time=2023-08-08 18:00:01.298596, duration=0.140732
+id=11, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:02.351623, end_time=2023-08-08 18:00:02.471661, duration=0.120038
+id=12, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:03.563134, end_time=2023-08-08 18:00:03.703650, duration=0.140516
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+id=10, command=go 33.762057877813504 10.289389067524116 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:01.157864, end_time=2023-08-08 18:00:01.298596, duration=0.140732
+id=11, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:02.351623, end_time=2023-08-08 18:00:02.471661, duration=0.120038
+id=12, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:03.563134, end_time=2023-08-08 18:00:03.703650, duration=0.140516
+id=13, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:04.744339, end_time=2023-08-08 18:00:04.877834, duration=0.133495
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+id=10, command=go 33.762057877813504 10.289389067524116 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:01.157864, end_time=2023-08-08 18:00:01.298596, duration=0.140732
+id=11, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:02.351623, end_time=2023-08-08 18:00:02.471661, duration=0.120038
+id=12, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:03.563134, end_time=2023-08-08 18:00:03.703650, duration=0.140516
+id=13, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:04.744339, end_time=2023-08-08 18:00:04.877834, duration=0.133495
+id=14, command=go -42.443729903536976 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:05.945769, end_time=2023-08-08 18:00:06.102652, duration=0.156883
+------
+Drone: 1
+id=0, command=command, response=ok, start_time=2023-08-08 17:58:59.812799, end_time=2023-08-08 17:58:59.852848, duration=0.040049
+id=1, command=takeoff, response=ok, start_time=2023-08-08 17:59:38.372355, end_time=2023-08-08 17:59:46.711018, duration=8.338663
+id=2, command=go 20.0 0.0 0.0 20, response=ok, start_time=2023-08-08 17:59:46.889927, end_time=2023-08-08 17:59:49.213326, duration=2.323399
+id=3, command=go 33.762057877813504 10.289389067524116 0.0 20, response=ok, start_time=2023-08-08 17:59:49.752464, end_time=2023-08-08 17:59:52.082307, duration=2.329843
+id=4, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:52.544949, end_time=2023-08-08 17:59:54.806717, duration=2.261768
+id=5, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:55.275961, end_time=2023-08-08 17:59:55.946652, duration=0.670691
+id=6, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:56.458198, end_time=2023-08-08 17:59:57.070539, duration=0.612341
+id=7, command=go -42.443729903536976 0.0 0.0 20, response=error Low voltage land, start_time=2023-08-08 17:59:57.625920, end_time=2023-08-08 17:59:58.257094, duration=0.631174
+id=8, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:58.797768, end_time=2023-08-08 17:59:59.000815, duration=0.203047
+id=9, command=go -3.536977491961416 40.19292604501607 0.0 20, response=error Motor stop, start_time=2023-08-08 17:59:59.984231, end_time=2023-08-08 18:00:00.236785, duration=0.252554
+id=10, command=go 33.762057877813504 10.289389067524116 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:01.157864, end_time=2023-08-08 18:00:01.298596, duration=0.140732
+id=11, command=go 41.80064308681672 0.6430868167202579 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:02.351623, end_time=2023-08-08 18:00:02.471661, duration=0.120038
+id=12, command=go 24.437299035369776 -18.649517684887464 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:03.563134, end_time=2023-08-08 18:00:03.703650, duration=0.140516
+id=13, command=go -11.575562700964625 -32.475884244372985 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:04.744339, end_time=2023-08-08 18:00:04.877834, duration=0.133495
+id=14, command=go -42.443729903536976 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:05.945769, end_time=2023-08-08 18:00:06.102652, duration=0.156883
+id=15, command=go -42.44372990353698 0.0 0.0 20, response=error Motor stop, start_time=2023-08-08 18:00:07.146266, end_time=2023-08-08 18:00:07.271288, duration=0.125022

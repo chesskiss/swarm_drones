@@ -5,6 +5,7 @@ from exstract_point import *
 import keyboard
 from ClassSwarmDrones import *
 
+
 def test1():
     start_pos_drone=[vector(0,4,0),vector(0,2,0),vector(0,0,0),vector(0,-2,0),vector(0,-4,0)]
     num_drone=len(start_pos_drone)           
@@ -60,10 +61,11 @@ def test3():
     num_drone=1
     num_sim_drone=0
     resolution=0.05 
-    size=180
-    num_points=8
+    size=100
+    num_points=7
     start_point=[20,0]
-    img = cv2.imread(f"./swarm_sdk/curves_test/img1.png")
+    #img_path = os.path.expandvars("$REPO/swarm_sdk/curves_test/img1.png") TODO
+    img = cv2.imread(f"./curves_test/img1.png")
     binary_img=img_to_binary_img(img)
 
     points=exstract_points(binary_img,size,start_point,num_points=num_points)

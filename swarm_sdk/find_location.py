@@ -114,7 +114,7 @@ def calculate_camera_position(intrinsic_matrix, image_points, real_height,real_w
 
     return np.array([dis_x, dis_y, dis_z], dtype=np.float32)
 
-
+#return drone's location
 def find_location(real_width,real_high,img):
 
     intrinsic_matrix = np.array([[9.105807265540521e+02, 0, 4.574269390215023e+02],

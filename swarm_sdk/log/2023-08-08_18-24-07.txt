@@ -1,0 +1,7 @@
+Hurray! Here we start
+------
+Drone: 1
+id=0, command=command, response=None, start_time=2023-08-08 18:24:07.379394, end_time=None, duration=None
+id=1, command=command, response=ok, start_time=2023-08-08 18:24:12.411460, end_time=2023-08-08 18:24:12.545173, duration=0.133713
+id=2, command=battery?, response=75
+, start_time=2023-08-08 18:24:17.484828, end_time=2023-08-08 18:24:17.514842, duration=0.030014

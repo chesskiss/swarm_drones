@@ -34,22 +34,38 @@ class Drone:
             swarm_sdk.start()
             
 
-
-
     def move_to(self, next_pos):
+        self.get_frame()
     # Move the drone to the next position
         direction = (next_pos - self.pos)
         if not self.sim:
             swarm_sdk.commands = [str(self.id) + '>go ' + \
                         str(direction.x) + ' ' + \
                         str(direction.y) + ' ' + \
-                        str(direction.z) +' ' + str(self.v)]
+                        str(direction.z) + ' ' + str(self.v)]
              
             swarm_sdk.start()
         self.pos = next_pos
         self.sphere.pos = self.pos
         if self.sim:
             time.sleep(0.5)
+
+
+    def get_frame(self) :
+        swarm_sdk.commands = [str(self.id) + '>streamon']
+        swarm_sdk.start()
+    
+        command = ['ffmpeg',
+            '-i',               # Input option
+            'udp://0.0.0.0:11111',  # Input source
+            '-r',               # Output frame rate option
+            '0.1',              # Output frame rate
+            './drone_stream%d.png'.format(self.id) # Output image file pattern
+        ]
+        subprocess.run(command)
+    
+        swarm_sdk.commands = [str(self.id) + '>streamoff']
+        swarm_sdk.start()
     
 
     def land(self):
@@ -109,12 +125,6 @@ class SwarmDronesMove:
                 drone.next_pos = self.points[0].pos
                 self.drones.append(drone)
 
-        # create folder for each drone if already exists delet it and create new one
-        for i in range(num_drone):
-            if os.path.exists(f'./img_drone{i}'):
-                shutil.rmtree(f'./img_drone{i}')
-            os.mkdir(f'./img_drone{i}')
-
 
     def start_move(self):
     # Move the drones to their respective start points
@@ -152,28 +162,6 @@ class SwarmDronesMove:
             else:
                 self.move_drones()
 
-
-    def find_true_point(self): #TODO Delete if not needed
-        for this_drone in self.drones:
-            if not(this_drone.sim):
-                this_drone.find_location()
-
-
-    def get_frame(swarm_sdk, drone_id) :
-        swarm_sdk.commands = [str(drone_id) + '>streamon']
-        swarm_sdk.start()
-    
-        command = ['ffmpeg',
-            '-i',               # Input option
-            'udp://0.0.0.0:11111',  # Input source
-            '-r',               # Output frame rate option
-            '0.1',              # Output frame rate
-            './img_drone0/drone_stream%d.png'.format(drone_id) # Output image file pattern
-        ]
-        subprocess.run(command)
-    
-        swarm_sdk.commands = [str(drone_id) + '>streamoff']
-        swarm_sdk.start()
 
     def move_point(self,direction,v):
     # Move all points in the given direction
