@@ -313,7 +313,6 @@ class Stats(object):
     """
     Statistics
     """
-
     def __init__(self, command, id):
         """
         Ctor.
@@ -329,6 +328,7 @@ class Stats(object):
         self.duration = None
         self.drone_ip = None
 
+
     def add_response(self, response, ip):
         """
         Adds a response.
@@ -342,6 +342,7 @@ class Stats(object):
             self.duration = self.get_duration()
             self.drone_ip = ip
 
+
     def get_duration(self):
         """
         Gets the duration.
@@ -350,6 +351,7 @@ class Stats(object):
         diff = self.end_time - self.start_time
         return diff.total_seconds()
 
+
     def print_stats(self):
         """
         Prints statistics.
@@ -357,12 +359,14 @@ class Stats(object):
         """
         print(self.get_stats())
 
+
     def got_response(self):
         """
         Checks if response was received.
         :return: A boolean indicating if response was received.
         """
         return False if self.response is None else True
+
 
     def get_stats(self):
         """
@@ -377,6 +381,7 @@ class Stats(object):
             'end_time': self.end_time,
             'duration': self.duration
         }
+
 
     def get_stats_delimited(self):
         stats = self.get_stats()

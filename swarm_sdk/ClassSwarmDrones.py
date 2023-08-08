@@ -4,8 +4,10 @@ from exstract_point import *
 import keyboard
 from swarm import *
 import time
+import subprocess
 
 swarm_sdk = Swarm()
+log_fpath = None
 
 class Drone:
     def __init__(self, pos, id, v, sim=False):
@@ -16,8 +18,7 @@ class Drone:
         self.id = id
         self.sim = sim
         self.v = v
-
-        print('checkpoint id = ', self.id)
+        print('checkpoint init Drone number ', self.id)
 
 
     def takeoff(self):
@@ -26,6 +27,7 @@ class Drone:
             print('checkpoint takeoff')
             swarm_sdk.commands = [str(self.id) + '>takeoff']
             swarm_sdk.start()
+
 
     def move_to(self, next_pos):
     # Move the drone to the next position
@@ -42,12 +44,15 @@ class Drone:
         if self.sim:
             time.sleep(0.5)
     
+
     def land(self):
         if not self.sim:    
             # land the drone
             swarm_sdk.commands = [str(self.id) + '>land']
             swarm_sdk.start()
         
+
+
 
 class SwarmDronesMove:
     def __init__(self, num_drone, start_pos_list, points,num_sim_drone=0,v=20):
@@ -59,7 +64,17 @@ class SwarmDronesMove:
         self.start_mode=True
         self.v = v
 
-        swarm_sdk.commands = ['scan ' + str(num_drone)]
+        #creating a log file
+        dpath = './log'
+        SwarmUtil.create_dir(dpath)
+        start_time = str(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime(time.time())))
+        global log_fpath
+        log_fpath = f'{dpath}/{start_time}.txt'
+        with open(log_fpath, 'w') as out:
+            out.write(f'Hurray! Here we start\n')
+
+        #Finding the drones
+        swarm_sdk.commands = ['scan ' + str(num_drone), 'battery_check 20']
         swarm_sdk.start()
 
         # Calculate start points for each drone based on the number of points
@@ -73,7 +88,6 @@ class SwarmDronesMove:
             self.points.append(Vp_point) 
             
         for i in range(num_drone):
-            print('first for = ', i)
             drone = Drone(self.start_pos_list[i], i+1, self.v)
             drone.next_pos = self.points[0].pos
             self.drones.append(drone)
@@ -83,6 +97,7 @@ class SwarmDronesMove:
             drone = Drone(self.start_pos_list[num_drone+j], -1 ,self.v, sim=True)
             drone.next_pos = self.points[0].pos
             self.drones.append(drone)
+
 
     def start_move(self):
     # Move the drones to their respective start points
@@ -104,6 +119,7 @@ class SwarmDronesMove:
                     in_the_start_point=True
         self.start_mode=False
 
+
     def move_drones(self):
         #if push on kay 'q' stop the program
         if keyboard.is_pressed('q'):
@@ -112,6 +128,7 @@ class SwarmDronesMove:
         for this_drone in self.drones:  #need to be simultanius
             this_drone.point_pos = (this_drone.point_pos+1) % self.num_point
             this_drone.move_to(self.points[this_drone.point_pos].pos)
+
 
     def move(self):
         while(True):
@@ -123,11 +140,28 @@ class SwarmDronesMove:
             else:
                 self.move_drones()
 
-    def find_true_point(self):
+
+    def find_true_point(self): #TODO Delete if not needed
         for this_drone in self.drones:
             if not(this_drone.sim):
                 this_drone.find_location()
-            
+
+
+    def get_frame(swarm_sdk, drone_id) :
+        swarm_sdk.commands = [str(drone_id) + '>streamon']
+        swarm_sdk.start()
+    
+        command = ['ffmpeg',
+            '-i',               # Input option
+            'udp://0.0.0.0:11111',  # Input source
+            '-r',               # Output frame rate option
+            '0.1',              # Output frame rate
+            './img_drone0/drone_stream%d.png'.format(drone_id) # Output image file pattern
+        ]
+        subprocess.run(command)
+    
+        swarm_sdk.commands = [str(drone_id) + '>streamoff']
+        swarm_sdk.start()
 
 
     def move_point(self,direction,v):

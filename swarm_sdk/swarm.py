@@ -7,6 +7,7 @@ import time
 import os
 import binascii
 from contextlib import suppress
+import ClassSwarmDrones
 
 class SwarmUtil(object):
     """
@@ -80,6 +81,7 @@ class SwarmUtil(object):
             with suppress(Exception):
                 os.makedirs(dpath)
 
+
     @staticmethod
     def save_log(manager):
         """
@@ -88,13 +90,8 @@ class SwarmUtil(object):
         :param manager: TelloManager.
         :return: None.
         """
-        dpath = './log'
-        SwarmUtil.create_dir(dpath)
-
-        start_time = str(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime(time.time())))
-        fpath = f'{dpath}/{start_time}.txt'
-
-        with open(fpath, 'w') as out:
+        fpath = ClassSwarmDrones.log_fpath
+        with open(fpath, 'a') as out:
             log = manager.get_log()
             for cnt, stats in enumerate(log.values()):
                 out.write(f'------\nDrone: {cnt + 1}\n')
@@ -285,7 +282,7 @@ class Swarm(object):
             self.pools[id].put(action)
             print(f'[ACTION] SN = {sn}, IP = {ip}, ID = {id}, ACTION = {action}')
 
-    def _handle_battery_check(self, command):
+    def _handle_battery_check(self, command): 
         """
         Handles battery check. Raises exception if any drone has
         battery life lower than specified threshold in the command.
@@ -295,7 +292,7 @@ class Swarm(object):
         """
         threshold = int(command.partition('battery_check')[2])
         for queue in self.pools:
-            queue.put('battery?')
+            queue.put('battery?') 
 
         self._wait_for_all()
 
