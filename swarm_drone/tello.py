@@ -32,12 +32,12 @@ class Tello:
     [2.0 with EDU-only commands](https://dl-cdn.ryzerobotics.com/downloads/Tello/Tello%20SDK%202.0%20User%20Guide.pdf)
     """
     # Send and receive commands, client socket
-    RESPONSE_TIMEOUT = 7  # in seconds
+    RESPONSE_TIMEOUT = 4  # in seconds
     TAKEOFF_TIMEOUT = 20  # in seconds
     FRAME_GRAB_TIMEOUT = 5
     TIME_BTW_COMMANDS = 0.1  # in seconds
     TIME_BTW_RC_CONTROL_COMMANDS = 0.001  # in seconds
-    RETRY_COUNT = 3  # number of retries after a failed command
+    RETRY_COUNT = 1  # number of retries after a failed command
     TELLO_IP = '192.168.10.1'  # Tello IP address
 
     # Video stream, server socket
@@ -112,7 +112,7 @@ class Tello:
         if not threads_initialized:
             # Run Tello command responses UDP receiver on background
             client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            client_socket.bind(("", Tello.CONTROL_UDP_PORT))
+            client_socket.bind(('0.0.0.0',9000))  #(("", Tello.CONTROL_UDP_PORT))
             response_receiver_thread = Thread(target=Tello.udp_response_receiver)
             response_receiver_thread.daemon = True
             response_receiver_thread.start()
@@ -156,7 +156,6 @@ class Tello:
         while True:
             try:
                 data, address = client_socket.recvfrom(1024)
-
                 address = address[0]
                 Tello.LOGGER.debug('Data received from {} at client_socket'.format(address))
 
@@ -439,15 +438,21 @@ class Tello:
         timestamp = time.time()
 
         client_socket.sendto(command.encode('utf-8'), self.address)
-
+        z=0
         responses = self.get_own_udp_object()['responses']
-
+        #print("responses1",responses)
         while not responses:
             if time.time() - timestamp > timeout:
+                if command == "streamon":
+                    raise TelloException("Timeout while waiting for response to 'streamon' command. ")
                 message = "ip={}, command '{}'. Did not receive a response after {} seconds".format(self.address[0],command, timeout)
                 self.LOGGER.warning(message)
                 return message
             time.sleep(0.1)  # Sleep during send command
+            responses = self.get_own_udp_object()['responses']
+           # if z%5==0: 
+              #  print("responses2",responses)
+            #    z+=1
 
         self.last_received_command_timestamp = time.time()
 
@@ -476,13 +481,16 @@ class Tello:
         Internal method, you normally wouldn't call this yourself.
         """
         response = "max retries exceeded"
-        for i in range(0, self.retry_count):
-            response = self.send_command_with_return(command, timeout=timeout)
+        #for i in range(0, self.retry_count):
+        response = self.send_command_with_return(command, timeout=timeout)
 
-            if 'ok' in response.lower():
+        if 'ok' in response.lower():
                 return True
+          
+        #self.LOGGER.debug("Command attempt #{} failed for command: '{}'".format(i, command))
 
-            self.LOGGER.debug("Command attempt #{} failed for command: '{}'".format(i, command))
+        print("not work, response=",response)
+        return True
 
         self.raise_result_error(command, response)
         return False # never reached
@@ -601,9 +609,9 @@ class Tello:
         self.send_control_command("streamoff")
         self.stream_on = False
 
-        if self.background_frame_read is not None:
-            self.background_frame_read.stop()
-            self.background_frame_read = None
+        #if self.background_frame_read is not None:
+        #   self.background_frame_read.stop()
+        #  self.background_frame_read = None
 
     def emergency(self):
         """Stop all motors immediately.
