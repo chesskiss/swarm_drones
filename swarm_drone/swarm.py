@@ -7,7 +7,8 @@ from typing import List, Callable
 
 from tello import Tello, TelloException
 from enforce_types import enforce_types
-
+import time
+import socket
 
 @enforce_types
 class TelloSwarm:
@@ -20,6 +21,57 @@ class TelloSwarm:
     funcQueues: List[Queue]
     threads: List[Thread]
     
+    @staticmethod
+
+    def find_tello(number_tello,timeout=0.15): 
+    # Python Program to Get IP Address
+
+        hostname = socket.gethostname()
+        IPAddr = socket.gethostbyname(hostname)
+        octets = IPAddr.split('.')
+        ip_list = []
+
+        for i in range(1, 255):
+            if i%25 == 0:
+                print(f"searching, {int(100*i/255)}%")
+            if i == int(octets[3]):
+                continue
+
+            tello_ip = octets[0] + '.' + octets[1] + '.' + octets[2] + '.' + str(i)
+
+            tello_port = 8889
+
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            # Bind the socket to a local port (you can choose any available port)
+            local_port = 9000
+            sock.bind(('0.0.0.0', local_port))
+
+            # Send a command to the Tello drone
+            command = "command"  # You can send other Tello commands as needed
+            sock.sendto(command.encode(), (tello_ip, tello_port))
+
+            # Set a timeout of 0.5 seconds for receiving a response
+            sock.settimeout(timeout)
+
+            try:
+                # Receive and print the response
+                response, _ = sock.recvfrom(1024)
+                if response.decode() == "ok":
+                    print("Response:", response.decode(), "from IP:", tello_ip)
+                    ip_list.append(tello_ip)
+
+            except socket.timeout:
+                pass
+
+            # Close the socket
+            sock.close()
+        if len(ip_list) == number_tello:
+            return TelloSwarm.fromIps(ip_list)
+        else:
+            print(f"find {len(ip_list)} tello, not {number_tello} tello")
+            return None
+
+
     @staticmethod
     def fromFile(path: str):
         """Create TelloSwarm from file. The file should contain one IP address per line.
@@ -59,6 +111,15 @@ class TelloSwarm:
         self.barrier = Barrier(len(tellos))
         self.funcBarrier = Barrier(len(tellos) + 1)
         self.funcQueues = [Queue() for tello in tellos]
+        self.get_comment=[]
+
+        def stayConnected(self):
+            while True:
+                for i, tello in enumerate (self.tellos):
+                    if time.time()-self.get_comment[i]>10:
+                        tello.connect(wait_for_state=False)
+                        self.get_comment[i]=time.time()
+                time.sleep(2)
 
         def worker(i):
             queue = self.funcQueues[i]
@@ -66,23 +127,25 @@ class TelloSwarm:
 
             while True:
                 func = queue.get()
+                self.get_comment[i]=time.time()
                 self.funcBarrier.wait()
                 try:func(i, tello)
+
                 except:
-                    try:
-                        tellos[i]=Tello(self.ips[i])
-                        tello.takeoff()
-                        func(i, tello)
-                    except:
-                       pass # tellos.remove    
+                    print(f"Error with tello{i} {self.ips[i]}")    
+
                 self.funcBarrier.wait()
-                print(f"Done with {i} tello")
+                #print(f"Done with {i} tello")
 
         self.threads = []
         for i, _ in enumerate(tellos):
+            self.get_comment.append(time.time()+5)
             thread = Thread(target=worker, daemon=True, args=(i,))
             thread.start()
             self.threads.append(thread)
+
+        self.stay_connect= Thread(target=stayConnected, daemon=True, args=(self,))
+        #self.stay_connect.start()
 
     def sequential(self, func: Callable[[int, Tello], None]):
         """Call `func` for each tello sequentially. The function retrieves
