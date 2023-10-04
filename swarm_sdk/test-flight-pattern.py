@@ -4,6 +4,7 @@ import cv2
 from exstract_point import *
 import keyboard
 from ClassSwarmDrones import *
+from swarm_sdk.firebase_f import get_shape
 
 
 def test1():
@@ -75,6 +76,29 @@ def test3():
         swarm_drones.start_move()
         print('after start move')
         swarm_drones.move()
+
+def firebase():
+    shape = get_shape()
+    start_pos_drone=[vector(0,0,0)]
+    num_drone=1
+    num_sim_drone=0
+    resolution=0.05 
+    size=100
+    num_points=7
+    start_point=[20,0]
+    #img_path = os.path.expandvars("$REPO/swarm_sdk/curves_test/img1.png") TODO
+
+    img = cv2.imread(f"./curves_test/{shape}.png")
+    binary_img=img_to_binary_img(img)
+
+    points=exstract_points(binary_img,size,start_point,num_points=num_points)
+    if (check_point(points)):
+        swarm_drones = SwarmDronesMove(num_drone, start_pos_drone, points,num_sim_drone=num_sim_drone)
+        print('before start move')
+        swarm_drones.start_move()
+        print('after start move')
+        swarm_drones.move()
+
 
 if __name__ == '__main__':
     test3()
