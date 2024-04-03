@@ -1,0 +1,22 @@
+Hurray! Here we start
+------
+Drone: 1
+id=0, command=command, response=None, start_time=2023-08-08 18:34:23.368168, end_time=None, duration=None
+id=1, command=command, response=ok, start_time=2023-08-08 18:34:28.402560, end_time=2023-08-08 18:34:28.470011, duration=0.067451
+id=2, command=battery?, response=43
+, start_time=2023-08-08 18:34:33.500797, end_time=2023-08-08 18:34:33.576819, duration=0.076022
+------
+Drone: 1
+id=0, command=command, response=None, start_time=2023-08-08 18:34:23.368168, end_time=None, duration=None
+id=1, command=command, response=ok, start_time=2023-08-08 18:34:28.402560, end_time=2023-08-08 18:34:28.470011, duration=0.067451
+id=2, command=battery?, response=43
+, start_time=2023-08-08 18:34:33.500797, end_time=2023-08-08 18:34:33.576819, duration=0.076022
+id=3, command=takeoff, response=ok, start_time=2023-08-08 18:36:36.321281, end_time=2023-08-08 18:36:38.637337, duration=2.316056
+------
+Drone: 1
+id=0, command=command, response=None, start_time=2023-08-08 18:34:23.368168, end_time=None, duration=None
+id=1, command=command, response=ok, start_time=2023-08-08 18:34:28.402560, end_time=2023-08-08 18:34:28.470011, duration=0.067451
+id=2, command=battery?, response=43
+, start_time=2023-08-08 18:34:33.500797, end_time=2023-08-08 18:34:33.576819, duration=0.076022
+id=3, command=takeoff, response=ok, start_time=2023-08-08 18:36:36.321281, end_time=2023-08-08 18:36:38.637337, duration=2.316056
+id=4, command=streamon, response=ok, start_time=2023-08-08 18:36:40.486059, end_time=2023-08-08 18:36:40.579583, duration=0.093524
